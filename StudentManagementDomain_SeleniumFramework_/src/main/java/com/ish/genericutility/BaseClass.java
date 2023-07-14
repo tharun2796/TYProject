@@ -27,6 +27,10 @@ public class BaseClass {
 	public String envFilePath;
 	public String excelFilePath;
 	
+	static {
+		System.setProperty("webdriver.gecko.driver","./src/test/resources/driver/geckodriver.exe");
+		System.setProperty("webdriver.edge.driver","./src/test/resources/driver/msedgedriver.exe");
+	}
 	/**
 	 * To connect to MySQL database
 	 * @throws SQLException
@@ -53,10 +57,10 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(BROWSER.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+		//	WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else if(BROWSER.equalsIgnoreCase("edge")) {
-			WebDriverManager.edgedriver().setup();
+		//	WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}else {
 			driver = new ChromeDriver();

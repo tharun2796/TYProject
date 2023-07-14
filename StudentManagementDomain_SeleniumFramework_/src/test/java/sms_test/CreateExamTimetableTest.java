@@ -33,6 +33,7 @@ public class CreateExamTimetableTest extends BaseClass{
 		ctp.getAddBtn().click();
 		ctp.addSubjectRouting(driver, DAY, SUBJECT, TEACHER, CLASSROOM, START_TIME, END_TIME);
 
+		Thread.sleep(5000);
 		WebElement visibilityOfAddBtn = ctp.getAddBtn();
 		wLib.waitForElement(driver, visibilityOfAddBtn);
 	}
